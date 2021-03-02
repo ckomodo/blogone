@@ -12,8 +12,7 @@ const firstBook = {
 };
 
 const secondBook = {
-  img:
-    "https://m.media-amazon.com/images/I/61EYPTVI2JL.jpg",
+  img: "https://m.media-amazon.com/images/I/61EYPTVI2JL.jpg",
   title: "The Return",
   author: "Nicholas Sparks, Kyf Brewer, et al.",
 };
@@ -25,22 +24,31 @@ function BookList() {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
+      >
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum nulla in ligula vestibulum blandit. Ut sit amet sodales odio. Suspendisse maximus libero ac auctor sodales. Quisque quis felis in lorem scelerisque consectetur. Sed mattis augue quis fringilla tempus. Aliquam sit amet dolor 
+        </p>
+      </Book>
+
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
       />
-      <Book 
-      img={secondBook.img}
-      title={secondBook.title}
-      author={secondBook.author}/>
     </section>
   );
 }
 
 const Book = (props) => {
+  const {img, title, author, children} = props
   console.log(props);
   return (
     <article className="bookname">
-      <img src={props.img} alt=" " />
-      <h1>{props.title}</h1>
-      <h4>{props.author}</h4>
+      <img src={img} alt=" " />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+      <h5>{children}</h5>
+
     </article>
   );
 };
